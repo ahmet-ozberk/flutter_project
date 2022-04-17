@@ -15,7 +15,6 @@ class Home extends ConsumerStatefulWidget {
 class _HomeState extends ConsumerState<Home> {
   @override
   void initState() {
-    ref.read(homeRiverpod).init();
     super.initState();
   }
 
@@ -40,8 +39,11 @@ class _HomeState extends ConsumerState<Home> {
             return Hero(
               tag: item.image,
               child: GrockContainer(
-                onTap: () => Grock.to(
-                    ProductDetail(image: item.image, title: item.title)),
+                onTap: () => Grock.to(ProductDetail(
+                  image: item.image,
+                  title: item.title,
+                  list: item.items,
+                )),
                 height: 180,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -66,10 +68,8 @@ class _HomeState extends ConsumerState<Home> {
                       padding: [15, 5].horizontalAndVerticalP,
                       child: Text(
                         item.title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5!
-                            .copyWith(color: Colors.white),
+                        style: Theme.of(context).textTheme.headline5!.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),

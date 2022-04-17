@@ -11,7 +11,7 @@ class ProductRiverpod extends ChangeNotifier {
         ProductModel(
           image: i.randomImage(width: 500,height: 300),
           title: "Başlık $i",
-          description: "Açıklama metni yazısı $i",
+          description: "Açıklama metni yazısı $i Açıklama metni yazısı $i Açıklama metni yazısı $i Açıklama metni yazısı $i",
         ),
       );
     }
